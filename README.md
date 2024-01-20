@@ -1,5 +1,5 @@
 # First Step
 Intialize the upload directory path in application.properties file
 
-#Second Step
+# Second Step
 ./gradlew bootrun
