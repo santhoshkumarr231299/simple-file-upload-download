@@ -1,0 +1,21 @@
+<html>
+<body>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" id="myFile" name="file">
+    <input type="submit">
+</form>
+
+
+<ul id="files">
+</ul>
+<script>
+async function run() {
+    const response = await fetch("/getFiles").then(res => res.json());
+    for(let file of response) {
+        document.getElementById("files").innerHTML += "<li><a href='/download/" + file.fileName + "'>" + file.fileName + "</a></li>";
+    }
+}
+run()
+</script>
+</body>
+</html>
